@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 🌙 Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #1b4332; /* Verde oscuro */
+    --secondary: #f4d35e; /* Amarillo pastel */
+    --background: #f8f9fa;
+    --foreground: #d6d3d3;
+    --text-primary: #343a40; 
+    --text-secondary: #1b4d38;
+    --border-color: #343a40;
+    --verdemedio: #40916c ; /* Amarillo */
+    --verdelima: #d9ed92 ; /* Verde lima */
+    --amarillofuerte: #ffb703 ; /* Amarillo fuerte */
+    --terracota: #e07a5f ; /* Terracota */
+
+  }
+}
+
+/* 🏗️ Base del diseño */
+body {
+  font-family: 'Cal Sans', sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden; 
+  letter-spacing: 0.5px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.cal-sans-regular {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+.cal-sans-bold {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Para los encabezados (h1, h2, h3) en color amarillo */
+h1 {
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+h2, h3 {
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 600;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Ajuste del subtítulo */
+p {
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem; /* Aumento de tamaño */
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Diseño mejorado para el switch de políticas */
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background: var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active {
+  background: var(--primary);
+}
+
+.switch.active::before {
+  left: 25px;
+}
+
+.switch-label {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Permite la rotación en 3D */
+.perspective {
+  perspective: 1000px;
+}
+
+/* Contenedor de la tarjeta */
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+}
+
+/* Hace que la tarjeta gire en hover */
+.group:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* Oculta la cara trasera cuando está de frente */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Posiciona la cara trasera correctamente */
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.contact-form-container {
+  background-image: url('/images/fondo patron.webp'); /* Cambiá la ruta a tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem; /* Espaciado interno */
+}
+
+.metodologia {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.metodologia .titulo {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+}
+
+.paso {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.paso:hover {
+  transform: translateY(-10px);
+}
+
+.icono {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.paso h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.paso p {
+  font-size: 1rem;
+  color: #555;
+}

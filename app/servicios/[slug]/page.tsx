@@ -2,11 +2,13 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-export default async function ServicioPage({ params }: { params?: { slug?: string } }) {
-  if (!params || !params.slug) {
-    return notFound();
-  }
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
+export default function ServicioPage({ params }: Props) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
   if (!servicio) {
@@ -26,21 +28,19 @@ export default async function ServicioPage({ params }: { params?: { slug?: strin
           {servicio.actividades.map((actividad, index) => (
             <div key={index} className="group w-full max-w-lg mx-auto perspective">
               <div className="flip-card relative w-full h-72 rounded-lg shadow-lg">
-                
-                  {/* Cara frontal */}
-                  <div className="flip-front absolute inset-0 backface-hidden rounded-lg overflow-hidden shadow-lg">
-                    <Image 
-                      src={actividad.image} 
-                      alt={actividad.name} 
-                      width={400} 
-                      height={300} 
-                      className="w-full h-full object-cover brightness-50"
-                    />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-                      <h3 className="text-4xl font-extrabold">{actividad.name}</h3> {/* 🔥 Texto más grande */}
-                    </div>
+                {/* Cara frontal */}
+                <div className="flip-front absolute inset-0 backface-hidden rounded-lg overflow-hidden shadow-lg">
+                  <Image 
+                    src={actividad.image} 
+                    alt={actividad.name} 
+                    width={400} 
+                    height={300} 
+                    className="w-full h-full object-cover brightness-50"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+                    <h3 className="text-4xl font-extrabold">{actividad.name}</h3>
                   </div>
-
+                </div>
 
                 {/* Cara trasera */}
                 <div className="flip-back bg-black bg-opacity-90 flex flex-col items-center justify-center text-white text-center p-6 rounded-lg">
@@ -49,12 +49,12 @@ export default async function ServicioPage({ params }: { params?: { slug?: strin
                     alt={actividad.name} 
                     width={400} 
                     height={300} 
-                    className="absolute inset-0 w-full h-full object-cover opacity-30"  /* 🔥 Aumentamos opacidad */
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
                   />
-                  <h6 className="relative text-lg font-semibold text-white">{actividad.desc || "Descripción no disponible"}</h6>
+                  <h6 className="relative text-lg font-semibold text-white">
+                    {actividad.desc || "Descripción no disponible"}
+                  </h6>
                 </div>
-
-
               </div>
             </div>
           ))}
@@ -63,5 +63,3 @@ export default async function ServicioPage({ params }: { params?: { slug?: strin
     </div>
   );
 }
-
-

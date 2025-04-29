@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
+// Definir el componente para una ruta dinámica
 export default function ServicioPage({ params }: { params: { slug: string } }) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
@@ -57,4 +58,3 @@ export default function ServicioPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-

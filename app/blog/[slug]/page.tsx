@@ -1,3 +1,4 @@
+/*
 import { blogPosts } from "@/data/blog";
 import { notFound } from "next/navigation";
 
@@ -16,3 +17,4 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     </main>
   );
 }
+*/

@@ -2,13 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function ServicioPage({ params }: Props) {
+export default function ServicioPage({ params }: { params: { slug: string } }) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
   if (!servicio) {
@@ -63,3 +57,4 @@ export default function ServicioPage({ params }: Props) {
     </div>
   );
 }
+

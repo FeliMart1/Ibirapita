@@ -24,7 +24,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-white text-5xl md:text-8xl font-extrabold tracking-wide opacity-90"
       >
-        Arquitectos de Encuentros
+        Elevá el talento de tu equipo
       </motion.h6>
     </section>
   );

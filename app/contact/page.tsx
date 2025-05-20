@@ -67,6 +67,7 @@ export default function Contact() {
               id="email"
               name="email"
               type="email"
+              placeholder="empresa@gmail.com"
               autoComplete="email"
               className="mt-2.5 block w-full rounded-md border-gray-300 px-3.5 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             />
@@ -76,16 +77,6 @@ export default function Contact() {
               Teléfono
             </label>
             <div className="mt-2.5 flex rounded-md border border-gray-300 shadow-sm">
-              <div className="relative">
-                <select
-                  id="country"
-                  name="country"
-                  className="h-full rounded-l-md border-0 bg-transparent py-2 pl-3 pr-8 text-base text-gray-500 focus:outline-none focus:ring-0"
-                >
-                  <option>UY</option>
-                </select>
-                <ChevronDownIcon className="absolute right-2 top-1/2 -translate-y-1/2 size-5 text-gray-500" />
-              </div>
               <input
                 id="phone-number"
                 name="phone-number"

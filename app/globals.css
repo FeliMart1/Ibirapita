@@ -6,93 +6,73 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: 'Cal Sans', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  background: var(--background);
+  color: var(--foreground);
+  width: 100%;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-/* 🌙 Modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #1b4332; /* Verde oscuro */
-    --secondary: #f4d35e; /* Amarillo pastel */
+    --primary: #1b4332;
+    --secondary: #fbb228;
     --background: #f8f9fa;
     --foreground: #d6d3d3;
-    --text-primary: #343a40; 
+    --text-primary: #343a40;
     --text-secondary: #1b4d38;
     --border-color: #343a40;
-    --verdemedio: #40916c ; /* Amarillo */
-    --verdelima: #d9ed92 ; /* Verde lima */
-    --amarillofuerte: #ffb703 ; /* Amarillo fuerte */
-    --terracota: #e07a5f ; /* Terracota */
-
+    --verdemedio: #40916c;
+    --verdelima: #d9ed92;
+    --amarillofuerte: #ffb703;
+    --terracota: #e07a5f;
   }
 }
 
-/* 🏗️ Base del diseño */
-body {
+.cal-sans-regular,
+.cal-sans-bold,
+h1, h2, h3, h4, p {
   font-family: 'Cal Sans', sans-serif;
-  color: var(--foreground);
-  background: var(--background);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  overflow-x: hidden; 
   letter-spacing: 0.5px;
-  width: 100%;
-  overflow-x: hidden;
 }
-
 
 .cal-sans-regular {
-  font-family: "Cal Sans", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.5px;
-}
-.cal-sans-bold {
-  font-family: "Cal Sans", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.5px;
 }
 
-/* Para los encabezados (h1, h2, h3) en color amarillo */
+.cal-sans-bold {
+  font-weight: 700;
+}
+
 h1 {
-  font-family: 'Cal Sans', sans-serif;
   font-weight: 700;
   color: var(--text-secondary);
-  letter-spacing: 0.5px;
 }
 
 h2, h3 {
-  font-family: 'Cal Sans', sans-serif;
   font-weight: 600;
   color: var(--secondary);
-  letter-spacing: 0.5px;
 }
 
 h4 {
-  font-family: 'Cal Sans', sans-serif;
   font-weight: 500;
   color: var(--text-primary);
-  letter-spacing: 0.5px;
 }
 
-/* Ajuste del subtítulo */
 p {
-  font-family: 'Cal Sans', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem; /* Aumento de tamaño */
-  line-height: 1.6;
+  font-size: 1.2rem;
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
-  letter-spacing: 0.5px;
 }
 
-/* Diseño mejorado para el switch de políticas */
+/* Switch Toggle */
 .switch-container {
   display: flex;
   align-items: center;
@@ -136,23 +116,20 @@ p {
   color: var(--text-primary);
 }
 
-/* Permite la rotación en 3D */
+/* Flip Card */
 .perspective {
   perspective: 1000px;
 }
 
-/* Contenedor de la tarjeta */
 .flip-card {
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
 
-/* Hace que la tarjeta gire en hover */
 .group:hover .flip-card {
   transform: rotateY(180deg);
 }
 
-/* Oculta la cara trasera cuando está de frente */
 .flip-front,
 .flip-back {
   position: absolute;
@@ -161,19 +138,17 @@ p {
   backface-visibility: hidden;
 }
 
-/* Posiciona la cara trasera correctamente */
 .flip-back {
   transform: rotateY(180deg);
 }
 
+/* Contact Form Background */
 .contact-form-container {
-  background-image: url('/images/fondo patron.webp'); /* Cambiá la ruta a tu imagen */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2rem; /* Espaciado interno */
+  background: url('/images/fondo patron.webp') center/cover no-repeat;
+  padding: 2rem;
 }
 
+/* Metodología Section */
 .metodologia {
   background-color: #f9f9f9;
   padding: 60px 0;
@@ -188,15 +163,15 @@ p {
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   gap: 40px;
 }
 
 .paso {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 

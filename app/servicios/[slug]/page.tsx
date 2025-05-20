@@ -2,16 +2,13 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-export default async function ServicioPage({
-  params,
-}: {
-  params: { slug: string };
+export default async function ServicioPage(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const servicio = servicios.find((s) => s.slug === params.slug);
+  const { slug } = await props.params;
+  const servicio = servicios.find((s) => s.slug === slug);
 
-  if (!servicio) {
-    return notFound();
-  }
+  if (!servicio) return notFound();
 
   return (
     <div className="pt-16 min-h-screen">

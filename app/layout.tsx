@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Importamos Cal Sans local
+const calSans = localFont({
+  src: "../public/fuente/CalSans-Regular.ttf",
+  variable: "--font-cal-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className="bg-white text-gray-900">
+    <html lang="es" className={calSans.variable}>
+      <body className="bg-white text-gray-900 font-sans">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
@@ -32,5 +29,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-

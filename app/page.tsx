@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
+
 import Hero from "@/components/Hero";
 import Principio from "@/components/Principio";
 import Problema from "@/components/Problema";

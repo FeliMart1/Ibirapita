@@ -2,15 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-// Tipado de los props
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-// Componente de página
-export default function ServicioPage({ params }: PageProps) {
+export default function ServicioPage({ params }: { params: { slug: string } }) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
   if (!servicio) {
@@ -30,7 +22,6 @@ export default function ServicioPage({ params }: PageProps) {
           {servicio.actividades.map((actividad, index) => (
             <div key={index} className="group w-full max-w-lg mx-auto perspective">
               <div className="flip-card relative w-full h-72 rounded-lg shadow-lg">
-                {/* Cara frontal */}
                 <div className="flip-front absolute inset-0 backface-hidden rounded-lg overflow-hidden shadow-lg">
                   <Image 
                     src={actividad.image} 
@@ -43,8 +34,6 @@ export default function ServicioPage({ params }: PageProps) {
                     <h3 className="text-4xl font-extrabold">{actividad.name}</h3>
                   </div>
                 </div>
-
-                {/* Cara trasera */}
                 <div className="flip-back bg-black bg-opacity-90 flex flex-col items-center justify-center text-white text-center p-6 rounded-lg">
                   <Image 
                     src={actividad.image} 
@@ -66,7 +55,7 @@ export default function ServicioPage({ params }: PageProps) {
   );
 }
 
-// Genera las rutas estáticas basadas en los slugs de servicios
+// Genera las rutas estáticas para build
 export async function generateStaticParams() {
   return servicios.map((servicio) => ({
     slug: servicio.slug,

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-export default function ServicioPage({
+export default async function ServicioPage({
   params,
 }: {
   params: { slug: string };

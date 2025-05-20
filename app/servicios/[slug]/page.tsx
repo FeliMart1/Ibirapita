@@ -2,12 +2,14 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
+// Tipado de los props
 type PageProps = {
   params: {
     slug: string;
   };
 };
 
+// Componente de página
 export default function ServicioPage({ params }: PageProps) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
@@ -62,4 +64,11 @@ export default function ServicioPage({ params }: PageProps) {
       </section>
     </div>
   );
+}
+
+// Genera las rutas estáticas basadas en los slugs de servicios
+export async function generateStaticParams() {
+  return servicios.map((servicio) => ({
+    slug: servicio.slug,
+  }));
 }

@@ -2,13 +2,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function ServicioPage({ params }: PageProps) {
+export default function ServicioPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
   if (!servicio) {

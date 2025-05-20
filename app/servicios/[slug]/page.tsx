@@ -2,8 +2,13 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import servicios from "@/data/servicios";
 
-// Definir el componente para una ruta dinámica
-export default function ServicioPage({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default function ServicioPage({ params }: PageProps) {
   const servicio = servicios.find((s) => s.slug === params.slug);
 
   if (!servicio) {

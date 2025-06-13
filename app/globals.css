@@ -29,21 +29,21 @@ html, body {
   box-sizing: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #1b4332;
-    --secondary: #fbb228;
-    --background: #f8f9fa;
-    --foreground: #d6d3d3;
-    --text-primary: #343a40;
-    --text-secondary: #1b4d38;
-    --border-color: #343a40;
-    --verdemedio: #40916c;
-    --verdelima: #d9ed92;
-    --amarillofuerte: #ffb703;
-    --terracota: #e07a5f;
-  }
+
+:root {
+  --primary: #1b4332;
+  --secondary: #fbb228;
+  --background: #f8f9fa;
+  --foreground: #d6d3d3;
+  --text-primary: #343a40;
+  --text-secondary: #1b4d38;
+  --border-color: #343a40;
+  --verdemedio: #40916c;
+  --verdelima: #d9ed92;
+  --amarillofuerte: #ffb703;
+  --terracota: #e07a5f;
 }
+
 
 .cal-sans-regular,
 .cal-sans-bold,

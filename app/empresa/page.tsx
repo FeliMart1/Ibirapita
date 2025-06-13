@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const teamMembers = [
-  { name: "Ignacio García", role: "Coordinador General", image: "/images/retratoNacho.jpeg" }, 
-  { name: "María Jose Capurro", role: "Coordinadora de Operaciones", image: "/images/retratoChecha.jpeg" },
-  { name: "Manuela Duran", role: "Encargada de Cuentas", image: "/images/retratoManu.jpeg" },
-  { name: "Felipe Martínez", role: "Innovación y TI", image: "/images/retratoFeli.jpeg" },
+  { name: "Ignacio García", role: "Coordinador General", image: "/images/retratoNacho.webp" }, 
+  { name: "María Jose Capurro", role: "Coordinadora de Operaciones", image: "/images/retratoChecha.webp" },
+  { name: "Manuela Duran", role: "Encargada de Cuentas", image: "/images/retratoManu.webp" },
+  { name: "Felipe Martínez", role: "Innovación y TI", image: "/images/retratoFeli.webp" },
 ];
 
 const values = [
